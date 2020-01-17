@@ -11,5 +11,5 @@ do
 done
 
 mkdir -p ./{RPMS,SRPMS,BUILD,SOURCES,SPECS}
-spectool -g -R retire-js-repository-rpm.spec
+spectool -g -C SOURCES retire-js-repository-rpm.spec
 rpmbuild --quiet --define "_topdir `pwd`" -bb retire-js-repository-rpm.spec
