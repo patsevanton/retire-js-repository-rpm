@@ -10,7 +10,6 @@ do
     fi
 done
 
-rm -rf ~/rpmbuild/
-mkdir -p ~/rpmbuild/{RPMS,SRPMS,BUILD,SOURCES,SPECS}
+mkdir -p ./{RPMS,SRPMS,BUILD,SOURCES,SPECS}
 spectool -g -R retire-js-repository-rpm.spec
-rpmbuild -bb retire-js-repository-rpm.spec
+rpmbuild --quiet --define "_topdir `pwd`" -bb retire-js-repository-rpm.spec
